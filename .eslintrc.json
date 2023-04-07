@@ -1,0 +1,64 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "eslint-plugin-import", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:import/recommended",
+    "prettier"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "ignorePatterns": ["vite-env.d.ts"], // eslint 검사 제외할 파일 설정
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "camelcase": "error", // always
+    "spaced-comment": ["error", "always"], // 주석에서 // 또는 /* 뒤에 일정한 간격을 적용
+    "quotes": ["error", "double"],
+    "eqeqeq": "error",
+    "no-var": "error", // fix에서 수정 됨 (에디터에서는 검증 X)
+    "no-duplicate-imports": "error", // import 경로 중복 불가
+    "no-dupe-keys": "error", // object 키 중복 불가
+    "no-multi-str": "error",
+    "require-await": "error", // await은 async 내부에 있어야 함
+    "import/no-named-as-default": "off",
+    "key-spacing": ["error", { "beforeColon": false }], // object 모양 { key: "value" } key뒤에 콜론 바로 있어야 함
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", ["internal", "unknown"], "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "settings": {
+    "react": { "version": "detect" },
+    "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
