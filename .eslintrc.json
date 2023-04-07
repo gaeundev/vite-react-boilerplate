@@ -10,9 +10,24 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
     "plugin:import/recommended",
+    // https://github.com/storybookjs/eslint-plugin-storybook#readme
+    "plugin:storybook/recommended",
     "prettier"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+      "rules": {
+        "storybook/hierarchy-separator": "error",
+        "storybook/default-exports": "off"
+      }
+    },
+    {
+      "files": ["*.mdx", "*.md"],
+      // "parser": "eslint-mdx", // enable `eslint-mdx` manually if it does not work
+      "extends": "plugin:mdx/recommended"
+    }
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
