@@ -48,3 +48,9 @@ $ npm run preview
 ### Storybook
 
 UI Doc 제공 및 UI 개발 편의를 도와주는 도구 (https://storybook.js.org/)
+
+</br>
+
+### React Router Dom v6 (feat. history)
+
+SPA 리액트 페이지의 라우팅 관리 (https://reactrouter.com/en/main)
