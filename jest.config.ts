@@ -8,7 +8,7 @@ const config = () => {
         "<rootDir>/fileTransformer.ts",
     },
     transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$"],
-    setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
+    setupFilesAfterEnv: ["<rootDir>/src/utils/setupTests.ts"],
     moduleNameMapper: {
       "^@/(.*)$": "<rootDir>/src/$1",
       "\\.(css|scss)$": "identity-obj-proxy",

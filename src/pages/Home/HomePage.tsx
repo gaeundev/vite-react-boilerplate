@@ -3,10 +3,12 @@ import "./Home.css";
 import { useState } from "react";
 
 import reactLogo from "@/assets/react.svg";
+import { useAppSelector } from "@/store/setupStores";
 
 import viteLogo from "../../../public/vite.svg";
 
 function App() {
+  const nickName = useAppSelector(({ userInfo }) => userInfo.nickName);
   const [count, setCount] = useState(0);
 
   return (
@@ -19,7 +21,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1 data-testid="greetings">Hello, {nickName}</h1>
       <div className="card">
         <button data-testid="increase" type="button" onClick={() => setCount((count) => count + 1)}>
           count is <div data-testid="count">{count}</div>

@@ -54,3 +54,9 @@ UI Doc 제공 및 UI 개발 편의를 도와주는 도구 (https://storybook.js.
 ### React Router Dom v6 (feat. history)
 
 SPA 리액트 페이지의 라우팅 관리 (https://reactrouter.com/en/main)
+
+</br>
+
+### Redux Toolkit (feat. Redux)
+
+전역상태 관리 라이브러리인 Redux 개발을 좀 더 편리하게 도와주는 도구 (https://redux-toolkit.js.org/)
