@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.scss";
 
 import * as ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";

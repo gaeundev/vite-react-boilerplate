@@ -1,0 +1,7 @@
+$light-background-color: #ffffff;
+$dark-background-color: #1a1a1a;
+
+:export {
+  dark-background-color: $dark-background-color;
+  light-background-color: $light-background-color;
+}
