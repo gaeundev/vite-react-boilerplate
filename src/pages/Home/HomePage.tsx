@@ -3,12 +3,15 @@ import "./Home.scss";
 import { useState } from "react";
 
 import reactLogo from "@/assets/react.svg";
-import { useAppSelector } from "@/store/setupStores";
+import { useAppDispatch, useAppSelector } from "@/store/setupStores";
+import { fetchAuthLogin } from "@/store/user/actions";
 
 import viteLogo from "../../../public/vite.svg";
 
 function App() {
-  const nickName = useAppSelector(({ userInfo }) => userInfo.nickName);
+  const dispatch = useAppDispatch();
+
+  const nickName = useAppSelector(({ user }) => user.account.info.nickName);
   const [count, setCount] = useState(0);
 
   return (
@@ -31,6 +34,10 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+
+      <button data-testid="loginBtn" onClick={() => dispatch(fetchAuthLogin("testId")).unwrap()}>
+        로그인
+      </button>
     </div>
   );
 }

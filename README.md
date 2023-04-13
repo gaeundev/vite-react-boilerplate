@@ -60,3 +60,9 @@ SPA 리액트 페이지의 라우팅 관리 (https://reactrouter.com/en/main)
 ### Redux Toolkit (feat. Redux)
 
 전역상태 관리 라이브러리인 Redux 개발을 좀 더 편리하게 도와주는 도구 (https://redux-toolkit.js.org/)
+
+</br>
+
+### Axios
+
+통신을 편리하게 도와주는 라이브러리 (https://axios-http.com/kr/docs/intro)

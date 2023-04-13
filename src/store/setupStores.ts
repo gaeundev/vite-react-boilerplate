@@ -1,11 +1,15 @@
 import { combineReducers, configureStore, type PreloadedState } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
-import { userInfoReducers } from "@/store/user/reducers";
+import { accountStateInit, userReducer } from "@/store/user/reducers";
 
 const rootReducer = combineReducers({
-  userInfo: userInfoReducers,
+  user: userReducer,
 });
+
+export const rootStateInit: PreloadedState<RootState> = {
+  user: { account: accountStateInit },
+};
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -17,7 +21,7 @@ export const useAppDispatch: () => AppDispatch = useDispatch;
 export type RootState = ReturnType<typeof rootReducer>;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-/* 테스트 코드에 필요 */
+/* 테스트 코드(customRender라는 컴포넌트 생성 함수)에 필요 */
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
     reducer: rootReducer,
